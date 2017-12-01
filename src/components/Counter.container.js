@@ -1,3 +1,4 @@
+import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { increment, decrement } from "../actions";
 import Counter from "./Counter";
@@ -8,10 +9,10 @@ const CounterContaner = connect(
     value: state
   }),
   // map dispatch to props
-  dispatch => ({
-    onIncrement: () => dispatch(increment()),
-    onDecrement: () => dispatch(decrement())
-  })
+  dispatch => bindActionCreators({
+    onIncrement: increment,
+    onDecrement: decrement
+  }, dispatch)
 )(Counter);
 
 export default CounterContaner;
