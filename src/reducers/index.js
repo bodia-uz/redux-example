@@ -1,12 +1,12 @@
 import { handleActions } from 'redux-actions'
 import { increment, decrement } from "../actions";
 
-function inrementState(state) {
-  return state + 1;
+function inrementState(state, action) {
+  return state + action.payload;
 }
 
-function decrementtState(state) {
-  return state - 1;
+function decrementtState(state, action) {
+  return state - action.payload;
 }
 
 const DEFAULR_STATE = 0;

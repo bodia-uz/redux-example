@@ -4,8 +4,8 @@ const {
   increment,
   decrement
 } = createActions({
-  INCREMENT: () => ({}),
-  DECREMENT: () => ({})
+  INCREMENT: (delta = 1) => delta,
+  DECREMENT: (delta = 1) => delta
 })
 
 export {

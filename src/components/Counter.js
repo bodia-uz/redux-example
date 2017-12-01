@@ -7,15 +7,23 @@ class Counter extends Component {
 
   render() {
     const { value, onIncrement, onDecrement } = this.props;
+
+    // NOTE: onIncrement/onDecrement parameter is `delta`. Prevent click `e` param
     return (
       <p>
         Clicked: {value} times
         <br />
-        <button onClick={onIncrement}>
-          +
+        <button onClick={() => onIncrement()}>
+          +1
         </button>
-        <button onClick={onDecrement}>
-          -
+        <button onClick={() => onIncrement(2)}>
+          +2
+        </button>
+        <button onClick={() => onDecrement()}>
+          -1
+        </button>
+        <button onClick={() => onDecrement(2)}>
+          -2
         </button>
         <button onClick={this.incrementAsync}>
           Increment async
