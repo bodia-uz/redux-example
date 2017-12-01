@@ -1,10 +1,12 @@
-function increment() {
-  return { type: "INCREMENT" };
-}
+import { createActions } from "redux-actions";
 
-function decrement() {
-  return { type: "DECREMENT" };
-}
+const {
+  increment,
+  decrement
+} = createActions({
+  INCREMENT: () => ({}),
+  DECREMENT: () => ({})
+})
 
 export {
   increment,
