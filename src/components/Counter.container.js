@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import { increment, decrement } from "../actions";
 import Counter from "./Counter";
 
 const CounterContaner = connect(
@@ -8,8 +9,8 @@ const CounterContaner = connect(
   }),
   // map dispatch to props
   dispatch => ({
-    onIncrement: () => dispatch({ type: "INCREMENT" }),
-    onDecrement: () => dispatch({ type: "DECREMENT" })
+    onIncrement: () => dispatch(increment()),
+    onDecrement: () => dispatch(decrement())
   })
 )(Counter);
 
